@@ -41,7 +41,7 @@ int main()
 
     cwd = root;
 
-    printf("enter \"menu\" to get the list of commands.\n");
+    printf("enter \"menu\" to get the command.\n");
     while (1)
     {
         printf("=>");
