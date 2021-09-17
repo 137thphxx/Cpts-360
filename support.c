@@ -37,7 +37,7 @@ NODE* search_child(NODE* parent, char* name)
 int insert_child(NODE* parent, NODE* q)
 {
     NODE* p;
-    printf("insert NODE %s into END of parent child list\n", q->name);
+    printf("insert NODE %s into end of parent child list\n", q->name);
     p = parent->child;
     if (p == 0)
         parent->child = q;
@@ -146,7 +146,7 @@ int ls()
     {
       if(child == NULL)
       {
-        printf("err: pathname does not exist\n");
+        printf("err: pathname not exist\n");
         return 0;
       }
       if(strcmp(child->name, mover) == 0)
@@ -171,7 +171,7 @@ int ls()
 int quit()
 {
     save();
-    printf("Program exit\n");
+    printf("Exit\n");
     exit(0);
     // improve quit() to SAVE the current tree as a Linux file
     // for reload the file to reconstruct the original tree
@@ -201,7 +201,7 @@ void rmdir(char* path)
 {
     if (strcmp(path, "") == 0)
     {
-        printf("err: empty pathname\n");
+        printf("err: pathname empty\n");
         return 0;
     }
 
@@ -219,7 +219,7 @@ void rmdir(char* path)
         {
             if (child == NULL)
             {
-                printf("err: pathname does not exist\n");
+                printf("err: pathname not exist\n");
                 return 0;
             }
             if (strcmp(child->name, mover) == 0 && 'D' == child->type)
@@ -240,7 +240,7 @@ void rmdir(char* path)
         {
             if ('F' == child->type)
             {
-                printf("err: wrong file type\n");
+                printf("err: wrong type\n");
                 return 0;
             }
             if (child->childN == NULL)
@@ -271,7 +271,7 @@ void rmdir(char* path)
             }
         }
     }
-    printf("err: dir does not exist\n");
+    printf("err: dir not exist\n");
 }
 
 
@@ -370,7 +370,7 @@ int creat(char path[])
         {
             if (child == NULL)
             {
-                printf("err: pathname does not exist\n");
+                printf("err: pathname not exist\n");
                 return 0;
             }
             if (strcmp(child->name, mover) == 0 && 'D' == child->type)
@@ -521,7 +521,7 @@ int creat(char path[])
         {
             if (child == NULL)
             {
-                printf("err: pathname does not exist\n");
+                printf("err: pathname not exist\n");
                 return 0;
             }
             if (strcmp(child->name, mover) == 0 && 'D' == child->type)
@@ -609,7 +609,7 @@ int rm(char* path)
         {
             if (child == NULL)
             {
-                printf("err: pathname does not exist\n");
+                printf("err: pathname not exist\n");
                 return 0;
             }
             if (strcmp(child->name, mover) == 0 && 'D' == child->type)
